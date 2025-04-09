@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: file-stream-app
-        image: asoltes/file-download-stream:v1.4.0
+        image: asoltes/file-download-stream:v1.5.0
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
@@ -29,3 +29,12 @@ spec:
             secretKeyRef:
               name: aws-credentials
               key: aws_secret_access_key
+              # In your deployment.yaml
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
