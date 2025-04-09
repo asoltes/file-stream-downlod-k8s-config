@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: file-stream-app
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: file-stream-app
+  template:
+    metadata:
+      labels:
+        app: file-stream-app
+    spec:
+      containers:
+      - name: file-stream-app
+        image: asoltes/file-stream-download:v1.0.0
+        ports:
+        - containerPort: 5000
