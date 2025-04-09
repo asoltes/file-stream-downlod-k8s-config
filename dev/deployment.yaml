@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: file-stream-app
 spec:
-  replicas: 1
+  replicas: 10
   selector:
     matchLabels:
       app: file-stream-app
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: file-stream-app
-        image: asoltes/file-download-stream:v1.5.0
+        image: asoltes/file-download-stream:v1.6.0
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
