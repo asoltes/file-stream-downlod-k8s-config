@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: file-stream-app
-        image: asoltes/file-download-stream:v1.6.0
+        image: asoltes/file-download-stream:v1.7.0
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
