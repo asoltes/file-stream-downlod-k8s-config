@@ -46,7 +46,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: status.podIP
-        - name: HOSTIP
+        - name: HOST_IP
           valueFrom:
             fieldRef:
-              fieldPath: status.podIP
+              fieldPath: status.hostIP
