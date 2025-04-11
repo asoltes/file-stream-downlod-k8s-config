@@ -14,6 +14,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: file-stream-app
+                name: file-stream-app-service
                 port:
                   number: 80
