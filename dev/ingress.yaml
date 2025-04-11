@@ -3,10 +3,10 @@ kind: Ingress
 metadata:
   name: file-stream-app-ingress
   namespace: file-stream-app
-  # annotations:
-  #   kubernetes.io/ingress.class: "nginx"  # Optional in newer versions if ingressClassName is used
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
-  # ingressClassName: nginx  # Preferred way in newer K8s versions
+  ingressClassName: traefik
   rules:
     - host: dl.andrestrek.com
       http:
