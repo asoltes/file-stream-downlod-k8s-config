@@ -3,16 +3,17 @@ kind: Ingress
 metadata:
   name: file-stream-app-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"  # Optional in newer versions if ingressClassName is used
 spec:
+  ingressClassName: nginx  # Preferred way in newer K8s versions
   rules:
-    - host: dl.andrestrek.com  # Replace with your actual domain
+    - host: dl.andrestrek.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: file-stream-app-service
+                name: file-stream-app
                 port:
-                  number: 5000
+                  number: 80
