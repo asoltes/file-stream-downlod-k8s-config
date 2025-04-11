@@ -18,7 +18,7 @@ spec:
         image: asoltes/file-download-stream:v1.1.0
         imagePullPolicy: Always
         ports:
-        - containerPort: 5000
+        - containerPort: 80
         env:
         - name: AWS_ACCESS_KEY_ID
           valueFrom:
