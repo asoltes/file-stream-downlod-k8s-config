@@ -1,0 +1,11 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: forward-auth
+  namespace: file-stream-app
+spec:
+  forwardAuth:
+    address: https://httpbin.org/basic-auth/user/passwd
+    trustForwardHeader: true
+    authResponseHeaders:
+      - "X-Auth-User"

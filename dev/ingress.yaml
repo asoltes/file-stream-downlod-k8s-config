@@ -5,6 +5,7 @@ metadata:
   namespace: file-stream-app
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.middlewares: file-stream-app-forward-auth@kubernetescrd
 spec:
   ingressClassName: traefik
   rules:
