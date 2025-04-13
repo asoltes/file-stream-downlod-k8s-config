@@ -23,7 +23,7 @@ spec:
     - host: api.andrestrek.com
       http:
       paths:
-        - path: /
+        - path: /api/presigned
           pathType: Prefix
           backend:
             service:
