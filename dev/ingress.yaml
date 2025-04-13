@@ -20,14 +20,3 @@ spec:
                 port:
                   number: 80
 
-    - host: api.andrestrek.com
-      http:
-      paths:
-        - path: /api/presigned
-          pathType: Prefix
-          backend:
-            service:
-              name: file-stream-api-service
-              port:
-                number: 80
-
