@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: file-dl-app-ingress
+  namespace: file-dl-app
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.middlewares: file-dl-app-forward-auth@kubernetescrd
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: dl.andrestrek.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: file-dl-app-service
+                port:
+                  number: 80
+
