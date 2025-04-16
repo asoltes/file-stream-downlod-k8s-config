@@ -4,7 +4,7 @@ metadata:
   name: file-stream-app
   namespace: file-stream-app
 spec:
-  replicas: 10
+  replicas: 2
   selector:
     matchLabels:
       app: file-stream-app
